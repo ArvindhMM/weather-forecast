@@ -1,0 +1,28 @@
+.weatherPage{
+    background-image: linear-gradient(135deg, #0c5b9c, #3c81ac, #4b92aa);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.selected{
+    color: rgb(247, 171, 109);
+    font-size: 25px;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    margin:auto;
+}
+    

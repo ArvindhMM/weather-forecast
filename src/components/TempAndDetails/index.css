@@ -1,0 +1,104 @@
+.weather{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    color: rgb(190 221 241);
+    width: auto;
+}
+.weatherDetails{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.weatherIcon{
+    width: 15px;
+}
+.temperature{
+    font-size: clamp(25px,35px,45px);
+}
+.additionalInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.infoIcon{
+    margin-right: 3px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: large;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: small;
+}
+.horizontalIcon{
+    font-size: clamp(20px,30px,40px);
+}
+
+.additionalInfoHorizontal{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: medium;
+    padding: 20px;
+}
+.horizontalInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px; 
+}
+
+@media screen and (max-width:568px){
+    .weather{
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem;
+        color: rgb(190 221 241);
+        width: auto;
+    }
+    .weatherDetails{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    .weatherIcon{
+        width: 15px;
+    }
+    .additionalInfo{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .infoIcon{
+        margin-right: 3px;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: large;
+    }
+    .info{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: small;
+    }
+      
+    .additionalInfoHorizontal{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 0.5rem;
+        padding: 2px;
+    }
+    .horizontalInfo{
+        display: flex;
+        justify-content: center;
+        margin-left: 5px; 
+    }
+}

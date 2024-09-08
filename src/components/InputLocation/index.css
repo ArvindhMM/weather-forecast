@@ -1,0 +1,35 @@
+.InputComponentContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    min-width: 70vw;
+}
+
+.inputLocationContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content:center ;
+    align-items: center;
+    width: 100%;
+}
+.inputLocation{
+    padding: 5px;
+    text-shadow: 1;
+    text-transform: capitalize;
+    width: 50%;
+}
+
+.inputLocation:focus{
+    outline: none;
+}
+.icons{
+    font-size: 20px;
+    margin-left: 5px;
+    width: 25px;
+}
+.icons:hover{
+    transition: ease-in;
+    font-size: 25px;
+}
