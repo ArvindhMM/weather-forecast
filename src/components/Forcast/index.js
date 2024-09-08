@@ -1,4 +1,4 @@
-import React , {useState,useEffect} from 'react'
+import React , {useState,useEffect, useCallback } from 'react'
 import { formatToLocalTime } from '../../services/formatToLocalTime'
 import { useParams } from 'react-router-dom';
 import './index.css'
@@ -36,23 +36,24 @@ const Forecast = ({units}) => {
         tempSymbol = '°F'
     }
 
-    const getForecastData = async () => {
-        try{
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=${units}`);
-        const data = await response.json();
-        const {hourly,daily} = formatForecastWeather(data.list[0].dt,data.city.timezone,data.list);
-        console.log(data)
-        console.log({hourly,daily})
-        setForecastData({hourly,daily});
-    } catch(error){
-        console.error('Error fetching Forecast data:', error);
-    }
-}
-        useEffect(() => {
-            if (city) {
-            getForecastData();
-            }
-        }, [city]);
+    const getForecastData = useCallback(async () => {
+        try {
+          const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=${units}`);
+          const data = await response.json();
+          const { hourly, daily } = formatForecastWeather(data.list[0].dt, data.city.timezone, data.list);
+          console.log(data);
+          console.log({ hourly, daily });
+          setForecastData({ hourly, daily });
+        } catch (error) {
+          console.error('Error fetching Forecast data:', error);
+        }
+      }, [city, units]);
+    
+      useEffect(() => {
+        if (city) {
+          getForecastData();
+        }
+      }, [city, units, getForecastData]);
 
 
     
