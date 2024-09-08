@@ -4,9 +4,10 @@ Welcome to the **Weather Forecast** project! This application allows users to se
 
 ## Features
 
-- **Search Cities**: Enter a city name to view city weather and forecast details.
+- **Search Cities**: Enter a city name and click ENTER or click search button to view the city weather and forecast details.
 - **Infinite Scroll**: Load more cities as you scroll down the table.
 - **Detailed Weather Info**: Click on a city name to view detailed weather and forecast information of that city.
+- **Switching Units**: Option to switch between Metric and Imperial units.
 
 ## Technologies Used
 
@@ -27,7 +28,11 @@ To get started with the project locally, follow these steps:
     git clone https://github.com/ArvindhMM/weather-forecast.git
     ```
 
+2. **Navigate to the Project Directory**:
 
+    ```bash
+    cd weather-forecast
+    ```
 
 3. **Install Dependencies**:
 

@@ -14,10 +14,16 @@ const InputLocation = () => {
         }
     }
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            onSearchClick();
+        }
+    };
+
     return(
         <div className="InputComponentContainer">
         <div className='inputLocationContainer'>
-            <input type='text' placeholder='search by city...' className='inputLocation' value = {city} onChange = {(event) => setCity(event.currentTarget.value)} />
+            <input type='text' placeholder='search by city...' className='inputLocation' value = {city} onKeyDown={handleKeyDown} onChange = {(event) => setCity(event.currentTarget.value)} />
             <BiSearch className = 'icons' onClick={onSearchClick}/>
         </div>
     </div>
