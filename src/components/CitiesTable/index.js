@@ -8,10 +8,7 @@ import './index.css'
 const CitiesTable = () => {
     const [citiesData, setCitiesData] = useState([]);
     const [page,setPage] = useState(1);
-    const [searchQuery,setSearchQuery] = useState('');
-    const [hasMore,setHasMore] = useState(true);
-    // const [error,setError] = useState(null);
-    // const [filteredCitiesData,setFilteredCitiesData] = useState([]);
+
 
     const fetchCitiesData = async () => {
         let response
@@ -30,19 +27,8 @@ const CitiesTable = () => {
     }
     useEffect(() => {
         fetchCitiesData();
-    },[])
+    })   
 
-    useEffect(() => {
-        setCitiesData([]); 
-        setPage(1);        
-        setHasMore(true);   
-        fetchCitiesData();  
-    }, [searchQuery]);     
-
-
-    const handleSearch = (event) => {
-        setSearchQuery(event.target.value);
-    }
 
     const  loader = () => {
         return(
@@ -62,7 +48,7 @@ const CitiesTable = () => {
     return (
         <div className='citiesTable'>
             <InputLocation />
-            <InfiniteScroll dataLength={citiesData.length} next={fetchCitiesData} hasMore={hasMore} loader={loader()}>
+            <InfiniteScroll dataLength={citiesData.length} next={fetchCitiesData} hasMore='true' loader={loader()}>
                 <table>
                     <thead>
                         <tr>

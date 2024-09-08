@@ -1,4 +1,4 @@
-import React , {useState,useEffect} from 'react'
+import React , {useState,useEffect,useCallback} from 'react'
 import { useParams } from 'react-router-dom';
 import { Oval } from 'react-loader-spinner';
 import TempAndDetails from '../TempAndDetails';
@@ -16,19 +16,19 @@ const WeatherPage = () => {
    const {city} = useParams()
 
 
-   const getWeatherData = async () => {
+   const getWeatherData = useCallback(async () => {
     try {
-        setLoading(true);
+      setLoading(true);
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=${units}`);
       const data = await response.json();
-      const currentWeather = formatCurrent(data); 
+      const currentWeather = formatCurrent(data);
       setWeatherData(currentWeather);
-      setLoading(false); 
+      setLoading(false);
     } catch (error) {
       console.error('Error fetching weather data:', error);
-      setLoading(false); 
+      setLoading(false);
     }
-  };
+  }, [city, units]);
   const formatCurrent = (data) => {
     const {
         coord: {lat,lon},
@@ -80,11 +80,12 @@ const WeatherPage = () => {
         )
     }
 
-  useEffect(() => {
-    if (city) {
-      getWeatherData();
-    }
-  }, [city,units]);
+    useEffect(() => {
+        if (city) {
+          getWeatherData();
+        }
+      }, [city, units, getWeatherData]);
+
 
   console.log('weatherData',weatherData)
 
