@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { Link } from 'react-router-dom';
 import InputLocation from '../InputLocation';
 import { ThreeDots } from 'react-loader-spinner';
 
@@ -64,7 +65,7 @@ const CitiesTable = () => {
                     <tbody>
                         {citiesData.map((city, index) => (
                             <tr key={index}>
-                                <td><a href={`/weather/${city.name}`}>{city.name}</a></td>
+                                <td><Link to={`/weather/${encodeURIComponent(city.name.toLowerCase())}`}>{city.name}</Link></td>
                                 <td>{city.cou_name_en}</td>
                                 <td>{city.timezone}</td>
                             </tr>
