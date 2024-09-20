@@ -21,6 +21,7 @@ const WeatherPage = () => {
       setLoading(true);
       const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=${units}`);
       const data = await response.json();
+      console.log(data);
       const currentWeather = formatCurrent(data);
       setWeatherData(currentWeather);
       setLoading(false);
@@ -68,13 +69,8 @@ const WeatherPage = () => {
                 height={80}
                 width={80}
                 color="#e01635"
-                wrapperStyle={{}}
-                wrapperClass=""
                 visible={true}
-                ariaLabel='oval-loading'
                 secondaryColor="#4fa94d"
-                strokeWidth={2}
-                strokeWidthSecondary={2}
                 className="loader"
             />
         )

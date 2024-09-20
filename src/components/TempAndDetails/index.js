@@ -65,7 +65,7 @@ const TempAndDetails = ({weather,units}) => {
                 <p>{main}</p>
             </div>
             <div className="weatherDetails">
-                <img src = {icon} alt= 'weather icon' className="waetherIcon" />
+                <img src = {icon} alt= 'weather icon' className="weatherIcon" />
             
             <p className="temperature">
                 {`${temp.toFixed()}`}°
@@ -86,7 +86,7 @@ const TempAndDetails = ({weather,units}) => {
                     <div key = {id} className="horizontalInfo">
                         <Icon className="infoIcon horizontalIcon"/>
                         <p className="info">
-                           {` ${title}: `}<span>  {value}</span>
+                            {title}:<span>  {value}</span>
                         </p>
                     </div>
                   ))}

@@ -13,7 +13,7 @@ const CitiesTable = () => {
 
     const fetchCitiesData = useCallback(async (page) => {
         try {
-            const response = await fetch(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=20&offset=${page * 50}`);
+            const response = await fetch(`https://public.opendatasoft.com/api/explore/v2.1/catalog/datasets/geonames-all-cities-with-a-population-1000/records?limit=50&offset=${page * 50}`);
             const data = await response.json();
             if (data.results.length > 0) {
                 setCitiesData(prevCitiesData => [...prevCitiesData, ...data.results]);

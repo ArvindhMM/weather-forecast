@@ -13,7 +13,7 @@
     padding: 1rem;
 }
 .weatherIcon{
-    width: 15px;
+    width: 8vw;
 }
 .temperature{
     font-size: clamp(25px,35px,45px);
@@ -67,9 +67,6 @@
         align-items: center;
         justify-content: space-between;
         padding: 1rem;
-    }
-    .weatherIcon{
-        width: 15px;
     }
     .additionalInfo{
         display: flex;

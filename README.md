@@ -16,7 +16,7 @@ Welcome to the **Weather Forecast** project! This application allows users to se
 - **React Loader Spinner**: For showing a loading spinner during data fetches.
 - **React Router DOM**: For handling routing between pages.
 - **OpenWeather API**: For fetching detailed weather information.
-- **OpenPublicr API**: For fetching cities data.
+- **OpenDataSoft API**: For fetching cities data.
 
 ## Installation
 
